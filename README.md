@@ -1,47 +1,78 @@
-# Student Performance & Academic Risk Prediction
+# Student Performance & Placement Prediction
 
-Machine learning project that predicts student exam performance and rises awarness on students at risk of poor academic performance.
+An end-to-end machine learning project that analyzes student academic behavior, predicts exam performance, predicts placement outcomes, and identifies the key drivers of student success.
 
-## Executive Summary
+## Business Problem
 
-Educational institutions often struggle to identify students who may require additional academic support before final examinations.
+Educational institutions often struggle to identify students who may require additional academic support before final examinations and placement evaluations.
 
-This project develops predictive models capable of:
+This project aims to:
 
-1. Predicting a student's final exam score.
-2. Predicting placement status.
-3. Identifying students at risk of underperforming.
+- Predict exam scores
+- Predict placement outcomes
+- Analyze the characteristics of successful students
+- Generate actionable educational insights
 
-The solution combines exploratory data analysis, feature engineering, machine learning, model evaluation, and deployment through an interactive Streamlit application.
+## Results
 
-The final model allows educators to estimate student outcomes using factors such as study habits, attendance, sleep patterns, assignment completion rates, and previous academic performance.
+### Exam Score Prediction
 
-## Dataset
+| Model | R² | MAE |
+|---------|---------|---------|
+| Linear Regression | 0.663 | 6.92 |
+| Random Forest | 0.713 | 5.88 |
 
-The dataset contains 10,000 synthetic student records.
+### Placement Prediction
 
-### Features
-
-| Feature | Description |
-|----------|-------------|
-| Study_Hours | Average daily study hours |
-| Attendance_Percentage | Class attendance rate |
-| Sleep_Hours | Average hours of sleep |
-| Internet_Usage | Daily internet usage |
-| Assignments_Completed | Percentage of assignments completed |
-| Previous_Scores | Historical academic performance |
-| Exam_Score | Final examination score |
-| Placement_Status | Placement outcome |
+| Model | Accuracy | F1 |
+|---------|---------|---------|
+| Logistic Regression | 90.7% | 94.5% |
+| Random Forest | 89.2% | 93.7% |
 
 
 
 
-## Data Analysis Questions
+## Correlation Analysis
 
-The exploratory analysis focused on answering the following questions:
 
-- Does attendance influence exam performance?
-- Do study hours significantly impact outcomes?
-- Is excessive internet usage associated with lower scores?
-- Which variables best predict placement status?
-- What characteristics define at-risk students?
+The correlation analysis revealed that study hours, assignment completion, and previous academic performance exhibit the strongest relationships with exam scores.
+
+![Correlation Analysis](images/correlation_heatmap.png)
+
+
+
+## Exam Score Prediction
+
+
+Study hours emerged as the most important predictor of student performance, followed by assignment completion and previous academic achievement.
+
+![Exam Score Prediction](images/feature_importance_exam_score.png)
+
+
+
+## Placement Prediction
+
+
+The factors influencing placement outcomes closely mirrored those affecting exam performance, highlighting the importance of academic engagement.
+
+![Exam Score Prediction](images/placement_feature_importance.png)
+
+
+
+
+### Student Success Insights
+
+## Performance Group Distribution
+
+
+Students were segmented into three performance groups to better understand the characteristics associated with academic success.
+
+![Performance Group Distribution](images/performance_groups.png)
+
+
+## Study Habits Across Groups
+
+
+High-performing students consistently reported more study hours than students requiring support.
+
+![Study Habits Across Groups](images/study_hours_boxplot.png)
